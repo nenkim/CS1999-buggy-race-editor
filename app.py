@@ -88,7 +88,20 @@ def summary():
 def poster():
   return render_template('poster.html')
 
+@app.route('/info')
+def info():
+    con = sql.connect(DATABASE_FILE)
+    con.row_factory = sql.Row
+    cur = con.cursor()
+    cur.execute("SELECT * FROM buggies")
+    record = cur.fetchone(); 
+    return render_template("info.html", buggy = record)
+
 # You shouldn't need to add anything below this!
 if __name__ == '__main__':
     alloc_port = os.environ.get('CS1999_PORT') or 5000
     app.run(debug=True, host="0.0.0.0", port=alloc_port)
+
+
+
+
