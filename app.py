@@ -25,10 +25,53 @@ def home():
 @app.route('/new', methods = ['POST', 'GET'])
 def create_buggy():
     if request.method == 'GET':
-        return render_template("buggy-form.html")
+        with sql.connect(DATABASE_FILE) as con:
+            cur = con.cursor()
+            cur.execute("SELECT * FROM buggies WHERE id=?",(DEFAULT_BUGGY_ID))
+            result = cur.fetchone()
+            if result:
+                qty_wheels = result[0]
+                power_type = result[1]
+                power_units = result[2]
+                aux_power_type = result[3]
+                aux_power_units = result[4]
+                flag_color = result[5]
+                flag_pattern = result[6]
+                flag_color_secondary = result[7]
+                tyres = result[8]
+                qty_tyres = result[9]
+                armour = result[10]
+                attack = result[11]
+                qty_attacks = result[12]
+                insulated = result[13]
+                antibiotic = result[14]
+                banging = result[15]
+                algo = result[16]
+                return render_template("buggy-form.html")
+    
     elif request.method == 'POST':
         msg=""
         qty_wheels = request.form['qty_wheels']
+        power_type = request.form['power_type']
+        power_units = request.form['power_units']
+        aux_power_type = request.form['aux_power_type']
+        aux_power_units = request.form['aux_power_units']
+        flag_color = request.form['flag_color']
+        flag_pattern = request.form['flag_pattern']
+        flag_color_secondary = request.form['flag_color_secondary']
+        tyres = request.form['tyres']
+        qty_tyres = request.form['qty_tyres']
+        armour = request.form['armour']
+        attack = request.form['attack']
+        qty_attacks = request.form['qty_attacks']
+        fireproof = request.form['fireproof']
+        insulated = request.form['insulated']
+        antibiotic = request.form['antibiotic']
+        banging = request.form['banging']
+        algo = request.form['algo']
+
+        
+
         try:
             with sql.connect(DATABASE_FILE) as con:
                 cur = con.cursor()
@@ -44,6 +87,8 @@ def create_buggy():
         finally:
             con.close()
         return render_template("updated.html", msg = msg)
+
+
 
 #------------------------------------------------------------
 # a page for displaying the buggy
@@ -103,5 +148,5 @@ if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0", port=alloc_port)
 
 
- # this is a test
+
 
