@@ -2,120 +2,127 @@
 
 {% block content %}
 
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  form {
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #8c969e;
+  }
+  label {
+    display: block;
+    margin: 10px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+  }
+  input[type="text"] {
+    width: 190px;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    font-size: medium;
+  }
+  .hint {
+    display: none;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  .hint-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #005a9e;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: "Verdana", sans-serif;
+    font-size: 16px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  .hint-button:hover {
+    background-color: #0087c1;
+    color: #FFFFFF;
+  }
+  select {
+    margin: 10px;
+    width: 200px;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    display: inline-block;
+  }
+</style>
+
   <h1>Make buggy</h1>
 
   <form action="/new" method="post">
     <label for="qty_wheels">Number of wheels:</label>
     <input type="text" name="qty_wheels" />
-    <input type="submit" class="button">
-  </form>
-
-  <form action="/new" method="post">
+    
     <label for="power_type">Primary motive power:</label>
     <input type="text" name="power_type" />
-    <input type="submit" class="button">
-  </form>
-
-  <form action="/new" method="post">
+    
     <label for="power_units">Primary motive power units:</label>
     <input type="text" name="power_units" />
-    <input type="submit" class="button">
-  </form>
-
-  <form action="/new" method="post">
+  
     <label for="aux_power_type">Auxiliary motive power:</label>
     <input type="text" name="aux_power_type" />
-    <input type="submit" class="button">
-  </form>
-
-  <form action="/new" method="post">
+    
     <label for="aux_power_units">Auxiliary motive power units:</label>
     <input type="text" name="aux_power_units" />
-    <input type="submit" class="button">
-  </form>
-
-  <form action="/new" method="post">
+    
     <label for="hamster_booster">Hamster booster:</label>
     <input type="text" name="hamster_booster" />
-    <input type="submit" class="button">
-  </form>
-
-  <form action="/new" method="post">
+    
     <label for="flag_color">Flag's colour:</label>
     <input type="text" name="flag_color" />
-    <input type="submit" class="button">
-  </form>
-
-  <form action="/new" method="post">
+  
     <label for="flag_pattern">Flag's pattern:</label>
     <input type="text" name="flag_pattern" />
-    <input type="submit" class="button">
-  </form>
-
-  <form action="/new" method="post">
+    
     <label for="flag_color_secondary">Flag's other colour:</label>
     <input type="text" name="flag_color_secondary" />
-    <input type="submit" class="button">
-  </form>
-
-  <form action="/new" method="post">
+  
     <label for="tyres">Type of tyres:</label>
     <input type="text" name="tyres" />
-    <input type="submit" class="button">
-  </form>
-
-  <form action="/new" method="post">
+    
     <label for="qty_tyres">Number of tyres:</label>
     <input type="text" name="qty_tyres" />
-    <input type="submit" class="button">
-  </form>
-
-  <form action="/new" method="post">
+  
     <label for="armour">Armour:</label>
     <input type="text" name="armour" />
-    <input type="submit" class="button">
-  </form>
-
-  <form action="/new" method="post">
+    
     <label for="attack">Offensive capabilities:</label>
     <input type="text" name="attack" />
-    <input type="submit" class="button">
-  </form>
-
-  <form action="/new" method="post">
+    
     <label for="qty_attacks">Number of attacks:</label>
     <input type="text" name="qty_attacks" />
-    <input type="submit" class="button">
-  </form>
-
-  <form action="/new" method="post">
+    
     <label for="fireproof">Fireproof:</label>
     <input type="text" name="fireproof" />
-    <input type="submit" class="button">
-  </form>
-
-  <form action="/new" method="post">
+  
     <label for="insulated">Insulated:</label>
     <input type="text" name="insulated" />
-    <input type="submit" class="button">
-  </form>
-
-  <form action="/new" method="post">
+      
     <label for="antibiotic">Antibiotic:</label>
     <input type="text" name="antibiotic" />
-    <input type="submit" class="button">
-  </form>
-
-  <form action="/new" method="post">
+  
     <label for="banging">Banging sound system:</label>
     <input type="text" name="banging" />
-    <input type="submit" class="button">
-  </form>
-
-  <form action="/new" method="post">
+  
     <label for="algo">Race computer algorithm</label>
     <input type="text" name="algo" />
-    <input type="submit" class="button">
+    
+    <input type="submit" class="button" value="submit">
   </form>
 
   <p>
